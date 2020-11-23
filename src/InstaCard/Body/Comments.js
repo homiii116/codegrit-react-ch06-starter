@@ -4,12 +4,12 @@ import Comment from './Comment';
 
 const Comments = ({ data, theme }) => {
   const { comments } = data;
+
+  //ここにコメント一覧を取得させる？//
+  const CommentList = ({ })
+
   return (
     <ul className="comments">
-      <Comment
-        theme={theme}
-        username={comments.poster}
-        comment={comments.body} />
       <Comment
         theme={theme}
         username={comments.poster}
@@ -29,10 +29,6 @@ Comments.defaultProps = {
     comments: {
       poster: "posterone",
       body: "This is the insta-card"
-    },
-    comments: {
-      poster: "postertwo",
-      body: "So cool!"
     }
   }
 }
