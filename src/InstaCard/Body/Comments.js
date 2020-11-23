@@ -3,17 +3,17 @@ import PropTypes from 'prop-types';
 import Comment from './Comment';
 
 const Comments = ({ data, theme }) => {
-  const { commentOne, commentTwo } = data;
+  const { comments } = data;
   return (
     <ul className="comments">
       <Comment
         theme={theme}
-        username={commentOne.poster}
-        comment={commentOne.body} />
+        username={comments.poster}
+        comment={comments.body} />
       <Comment
         theme={theme}
-        username={commentTwo.poster}
-        comment={commentTwo.body} />
+        username={comments.poster}
+        comment={comments.body} />
     </ul>
   );
 };
@@ -26,11 +26,11 @@ Comments.propTypes = {
 Comments.defaultProps = {
   theme: 'light',
   data: {
-    commentOne: {
+    comments: {
       poster: "posterone",
       body: "This is the insta-card"
     },
-    commentTwo: {
+    comments: {
       poster: "postertwo",
       body: "So cool!"
     }

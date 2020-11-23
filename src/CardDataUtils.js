@@ -2,20 +2,23 @@ import imageOne from './images/image-one.jpg';
 import imageTwo from './images/image-two.jpg';
 import avatarOne from './images/avatar-one.png';
 import avatarTwo from './images/avatar-two.png';
+import moment from 'moment';
+
+const postTimeOne = moment('2020-11-21 15:00:00').format('X');
+const postTimeTwo = moment('2020-11-22 15:00:00').format('X');
 
 const cardDataOne = {
   id: 1,
   poster: "posteruser1",
   posterAvatar: avatarOne,
   imageUrl: imageOne,
-  commentOne: {
-    poster: "commenter1",
-    body: "This is the insta-card"
-  },
-  commentTwo: {
-    poster: "commenter2",
-    body: "So cool!"
-  }
+  comments: [
+    {
+      postedAt: postTimeOne,
+      poster: "",
+      body: ""
+    }
+  ]
 }
 
 const cardDataTwo = {
@@ -23,14 +26,14 @@ const cardDataTwo = {
   poster: "posteruser2",
   posterAvatar: avatarTwo,
   imageUrl: imageTwo,
-  commentOne: {
-    poster: "commenter3",
-    body: "Nice photo!"
-  },
-  commentTwo: {
-    poster: "commenter4",
-    body: "Cute cat!"
-  }
+  comments: [
+    {
+      postedAt: postTimeTwo,
+      poster: "",
+      body: ""
+    }
+  ]
+
 }
 
 export const fetchData = (id = 1) => {
