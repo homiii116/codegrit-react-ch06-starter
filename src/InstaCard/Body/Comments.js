@@ -5,8 +5,12 @@ import Comment from './Comment';
 const Comments = ({ data, theme }) => {
   const { comments } = data;
 
-  //ここにコメント一覧を取得させる？//
-  const CommentList = ({ })
+const sortComments = comments.sort(function(a, b) {
+  const sortA = parseInt(a, 10);
+  const sortB = parseInt(b, 10);
+  return sortA - sortB;
+}); 
+console.log(sortComments);
 
   return (
     <ul className="comments">
