@@ -5,21 +5,27 @@ import Comment from './Comment';
 const Comments = ({ data, theme }) => {
   const { comments } = data;
 
-const sortComments = comments.sort(function(a, b) {
-  const sortA = parseInt(a, 10);
-  const sortB = parseInt(b, 10);
-  return sortA - sortB;
-}); 
-console.log(sortComments);
+  const sortComments = comments.sort(function(a, b) {
+    const sortA = parseInt(a, 10);
+    const sortB = parseInt(b, 10);
+    return sortA - sortB;
+  }); 
+  console.log(sortComments);
 
-  return (
-    <ul className="comments">
+  const commentList = sortComments.map((comment) => {
+    return (      
       <Comment
         theme={theme}
-        username={comments.poster}
-        comment={comments.body} />
+        username={comment.poster}
+        comment={comment.body} 
+        key={comment.postedAt} />  
+    );
+  })
+  return (
+    <ul className="comments">
+      {commentList}
     </ul>
-  );
+  )
 };
 
 Comments.propTypes = {

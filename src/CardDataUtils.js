@@ -6,6 +6,8 @@ import moment from 'moment';
 
 const postTimeOne = moment('2020-11-21 15:00:00').format('X');
 const postTimeTwo = moment('2020-11-22 15:00:00').format('X');
+const postTimeThree = moment('2020-11-23 15:00:00').format('X');
+const postTimeFour = moment('2020-11-24 15:00:00').format('X');
 
 const cardDataOne = {
   id: 1,
@@ -15,8 +17,13 @@ const cardDataOne = {
   comments: [
     {
       postedAt: postTimeOne,
-      poster: "",
-      body: ""
+      poster: "commenter1",
+      body: "This is the insta-card"
+    },
+    {
+      postedAt: postTimeTwo,
+      poster: "commenter2",
+      body: "Cool!"
     }
   ]
 }
@@ -28,9 +35,14 @@ const cardDataTwo = {
   imageUrl: imageTwo,
   comments: [
     {
-      postedAt: postTimeTwo,
-      poster: "",
-      body: ""
+      postedAt: postTimeThree,
+      poster: "commenter3",
+      body: "This is my cat!"
+    },
+    {
+      postedAt: postTimeFour,
+      poster: "commenter4",
+      body: "Cute!"
     }
   ]
 
